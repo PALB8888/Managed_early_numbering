@@ -1,0 +1,77 @@
+@Metadata.layer:  #CORE
+
+
+annotate view  ZEA_MNG_P_BOOKING
+    with 
+{
+
+ @UI.facet      : [
+    {
+      id         : 'Bookingid',
+      label      : 'Booking',
+      type       : #FIELDGROUP_REFERENCE,
+      purpose    : #STANDARD,
+      targetQualifier: 'FIELD_AREA'
+    } ]
+//@UI.Facet: [ { label: 'My Actions', targetQualifier: 'MyAction', type: #ACTION, purpose: #STANDARD } ]
+ @UI            : {
+
+  fieldGroup   :   [{ position: 10, qualifier: 'FIELD_AREA', label: 'Travel ID' }],
+  lineItem     :   [{ position: 10 , label: 'Travel' } ,
+                    { type: #FOR_ACTION, label: 'Complete Item Status', dataAction: 'SetitemStatus' }]
+                    
+  }
+  @UI.identification: [{ type: #FOR_ACTION , label: 'Complete Item Status' , dataAction: 'SetItemStatus' }]
+ TravelId ; 
+
+  @UI            : {
+
+  fieldGroup   :   [{ position: 20, qualifier: 'FIELD_AREA', label: 'Booking Id' }],
+  lineItem     :   [{ position: 20 , label: 'Booking Id' }]
+  }
+ BookingId ; 
+ 
+  
+  @UI            : {
+
+  fieldGroup   :   [{ position: 30, qualifier: 'FIELD_AREA', label: 'Booking Date' }],
+  lineItem     :   [{ position: 30 , label: 'Booking Date' }]
+  }
+ BookingDate; 
+ 
+ 
+  @UI            : {
+
+  fieldGroup   :   [{ position: 40, qualifier: 'FIELD_AREA', label: 'Booking Status' }],
+  lineItem     :   [{ position: 40 , label: 'Booking Status' }]
+  }
+ BookingStatus ; 
+ 
+   @UI            : {
+
+  fieldGroup   :   [{ position: 50, qualifier: 'FIELD_AREA', label: 'Booking Status' }],
+  lineItem     :   [{ position: 50 , label: 'Carried Id' }]
+  }
+ CarrierId ; 
+ 
+   @UI            : {
+
+  fieldGroup   :   [{ position: 60, qualifier: 'FIELD_AREA', label: 'Connection Id' }],
+  lineItem     :   [{ position: 60 , label: 'Connection Id ' }]
+  }
+ ConnectionId ; 
+ 
+    @UI            : {
+
+  fieldGroup   :   [{ position: 70, qualifier: 'FIELD_AREA', label: 'Customer Id' }],
+  lineItem     :   [{ position: 70 , label: 'Customer Id ' }]
+  }
+ CustomerId ; 
+ 
+     @UI            : {
+
+  fieldGroup   :   [{ position: 80, qualifier: 'FIELD_AREA', label: 'Flight Id' }],
+  lineItem     :   [{ position: 80 , label: 'Flight Date ' }]
+  }
+ FlightDate ; 
+}

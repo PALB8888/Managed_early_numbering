@@ -1,0 +1,5 @@
+@EndUserText.label: 'service definition'
+define service ZSC_EA_MNG {
+  expose ZEA_MNG_P_TRAVEL  as Travel;
+  expose ZEA_MNG_P_BOOKING as Booking;
+}

@@ -1,0 +1,5 @@
+CLASS zbp_ea_mng_i_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zea_mng_i_travel.
+ENDCLASS.
+
+CLASS zbp_ea_mng_i_travel IMPLEMENTATION.
+ENDCLASS.

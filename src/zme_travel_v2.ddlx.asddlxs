@@ -1,0 +1,94 @@
+@Metadata.layer: #CORE
+
+@UI: {
+  headerInfo: {
+    typeName: 'Travel',
+    typeNamePlural: 'Travel Details',
+    title: { type: #STANDARD, value: 'TravelId' }
+  }
+}
+annotate entity ZEA_MNG_P_TRAVEL
+    with 
+{
+@UI.facet      : [
+    {
+      id         : 'FacetFieldArea',
+      label      : 'Information',
+      type       : #FIELDGROUP_REFERENCE,
+      purpose    : #STANDARD,
+      targetQualifier: 'FIELD_AREA'
+    }
+    , 
+      
+    {
+      id         : 'controlSection',
+      type       : #LINEITEM_REFERENCE,
+      label      : 'Details',
+      position   : 20,
+      targetElement: '_Item'
+    }
+  ]
+  
+
+
+//  @UI.lineItem: [
+//  { position: 20, importance: #MEDIUM },
+//  { position: 10, type: #FOR_ACTION, label: 'Fill', dataAction: 'fillEmptyStreets' },
+//  { position: 20, type: #FOR_ACTION, label: 'Clear All', dataAction: 'clearAllEmptyStreets' }
+//]
+  @UI            : {
+  selectionField : [ { position: 10  } ],
+  fieldGroup   :   [{ position: 10, qualifier: 'FIELD_AREA', label: 'Travel ID' }],
+  lineItem     :   [{ position: 10 , label: 'Travel'   },{ type: #FOR_ACTION, label: 'Complete Status', dataAction: 'SetOverallStatus' }]
+ 
+  }
+  @UI.identification: [{ type: #FOR_ACTION , label: 'Complete Status' , dataAction: 'SetOverallStatus' }]
+  @EndUserText.label: 'Travel Id'
+  TravelId;
+
+  @UI            : {
+  selectionField : [ { position: 20  } ],
+  fieldGroup   :   [{ position: 20, qualifier: 'FIELD_AREA', label: 'Agency ID' }],
+  lineItem     :   [{ position: 20 , label: 'Agency Id' }]
+  }
+  @EndUserText.label: 'Agency Id'
+  AgencyId;
+
+  @UI            : {
+  fieldGroup   :   [{ position: 30, qualifier: 'FIELD_AREA', label: 'Total Price' }],
+  lineItem     :   [{ position: 30 , label: 'Total Price' }]
+  }
+  @EndUserText.label: 'TotalPrice'
+  TotalPrice;
+
+
+  @UI            : {
+  fieldGroup   :   [{ position: 40, qualifier: 'FIELD_AREA', label: 'Overall Status' }],
+  lineItem     :   [{ position: 40 , label: 'Overall Status' }]
+  }
+  @EndUserText.label: 'OverallStatus'
+  OverallStatus;
+
+  @UI            : {
+   fieldGroup   :   [{ position: 50, qualifier: 'FIELD_AREA', label: 'End Date' }],  
+  lineItem     :   [{ position: 50 , label: 'End Date' }]
+  }
+  @EndUserText.label: 'Enddate'
+  EndDate;
+
+  @UI            : {
+  fieldGroup   :   [{ position: 60, qualifier: 'FIELD_AREA', label: 'Begin Date' }], 
+  lineItem     :   [{ position: 60 , label: 'Begin Date' }]
+  }
+  @EndUserText.label: 'BeginDate'
+  BeginDate;
+
+  @UI            : {
+   fieldGroup   :   [{ position: 70, qualifier: 'FIELD_AREA', label: 'Description' }], 
+   lineItem     :   [{ position: 70 , label: 'Description' }]
+   }
+  @EndUserText.label: 'Description'
+  descrption;
+
+    
+}
